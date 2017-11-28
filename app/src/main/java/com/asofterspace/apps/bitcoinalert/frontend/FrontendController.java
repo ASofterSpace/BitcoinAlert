@@ -39,11 +39,14 @@ public class FrontendController {
         TextView btcRateGoogle = (TextView) parent.findViewById(R.id.btcRateGoogle);
         backCtrl.getGoogleRate(new ButtonClickCallback(parent, btcRateGoogle));
 
+        TextView btcRateBlockchain = (TextView) parent.findViewById(R.id.btcRateBlockchain);
+        backCtrl.getBlockchainInfoRate(new ButtonClickCallback(parent, btcRateBlockchain));
+
         TextView btcRateCoindesk = (TextView) parent.findViewById(R.id.btcRateCoindesk);
         backCtrl.getCoindeskRate(new ButtonClickCallback(parent, btcRateCoindesk));
 
-        TextView btcRateBlockchain = (TextView) parent.findViewById(R.id.btcRateBlockchain);
-        backCtrl.getBlockchainInfoRate(new ButtonClickCallback(parent, btcRateBlockchain));
+        TextView btcRateCoinify = (TextView) parent.findViewById(R.id.btcRateCoinify);
+        backCtrl.getCoinifyRate(new ButtonClickCallback(parent, btcRateCoinify));
     }
 
     private void addRefreshButtonListener() {

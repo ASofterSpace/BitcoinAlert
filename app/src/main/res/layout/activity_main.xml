@@ -42,15 +42,37 @@
         app:layout_constraintTop_toBottomOf="@+id/btcRateOverall" />
 
     <TextView
+        android:id="@+id/btcRateBlockchainLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blockchainInfoLabel"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btcRateCoindeskLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btcRateBlockchain"
+        app:layout_constraintTop_toBottomOf="@+id/btcRateGoogleLabel" />
+
+    <TextView
+        android:id="@+id/btcRateBlockchain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btcRateCoindesk"
+        app:layout_constraintLeft_toLeftOf="@+id/btcRateOverall"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btcRateGoogle" />
+
+    <TextView
         android:id="@+id/btcRateCoindeskLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/coindeskLabel"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btcRateBlockchainLabel"
+        app:layout_constraintBottom_toTopOf="@+id/btcRateCoinifyLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/btcRateCoindesk"
-        app:layout_constraintTop_toBottomOf="@+id/btcRateGoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/btcRateBlockchainLabel" />
 
     <TextView
         android:id="@+id/btcRateCoindesk"
@@ -58,24 +80,24 @@
         android:layout_height="wrap_content"
         android:text="@string/defaultText"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btcRateBlockchain"
+        app:layout_constraintBottom_toTopOf="@+id/btcRateCoinify"
         app:layout_constraintLeft_toLeftOf="@+id/btcRateOverall"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btcRateGoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/btcRateBlockchain" />
 
     <TextView
-        android:id="@+id/btcRateBlockchainLabel"
+        android:id="@+id/btcRateCoinifyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/blockchainInfoLabel"
+        android:text="@string/coinifyLabel"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/refreshBtn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/btcRateBlockchain"
-        app:layout_constraintTop_toBottomOf="@+id/btcRateCoindesk" />
+        app:layout_constraintRight_toLeftOf="@+id/btcRateCoinify"
+        app:layout_constraintTop_toBottomOf="@+id/btcRateCoindeskLabel" />
 
     <TextView
-        android:id="@+id/btcRateBlockchain"
+        android:id="@+id/btcRateCoinify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/defaultText"

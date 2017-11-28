@@ -2,7 +2,8 @@
     <string name="app_name">BitcoinAlert</string>
     <string name="defaultText">1 BTC = 1000 USD</string>
     <string name="googleLabel">Google:</string>
-    <string name="coindeskLabel">Coindesk:</string>
     <string name="blockchainInfoLabel">blockchain.info:</string>
+    <string name="coindeskLabel">Coindesk:</string>
+    <string name="coinifyLabel">Coinify:</string>
     <string name="refreshBtn">Refresh Information</string>
 </resources>

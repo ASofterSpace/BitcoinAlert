@@ -13,9 +13,11 @@ public class BackendController {
 
     private Double lastGoogleRate;
 
+    private Double lastBlockchainInfoRate;
+
     private Double lastCoindeskRate;
 
-    private Double lastBlockchainInfoRate;
+    private Double lastCoinifyRate;
 
     private RateCallback overallCallback;
 
@@ -24,9 +26,11 @@ public class BackendController {
 
         lastGoogleRate = null;
 
+        lastBlockchainInfoRate = null;
+
         lastCoindeskRate = null;
 
-        lastBlockchainInfoRate = null;
+        lastCoinifyRate = null;
     }
 
     /**
@@ -46,13 +50,6 @@ public class BackendController {
         WebAccessor.getAsynch("https://www.google.de/search?q=1+btc+to+usd", ourCallback);
     }
 
-    public void getCoindeskRate(RateCallback callback) {
-
-        WebAccessdCallback ourCallback = new CoindeskRateCallback(this, callback);
-
-        WebAccessor.getAsynch("https://api.coindesk.com/v1/bpi/currentprice.json", ourCallback);
-    }
-
     public void getBlockchainInfoRate(RateCallback callback) {
 
         WebAccessdCallback ourCallback = new BlockchainInfoRateCallback(this, callback);
@@ -60,9 +57,30 @@ public class BackendController {
         WebAccessor.getAsynch("https://blockchain.info/ticker", ourCallback);
     }
 
+    public void getCoindeskRate(RateCallback callback) {
+
+        WebAccessdCallback ourCallback = new CoindeskRateCallback(this, callback);
+
+        WebAccessor.getAsynch("https://api.coindesk.com/v1/bpi/currentprice.json", ourCallback);
+    }
+
+    public void getCoinifyRate(RateCallback callback) {
+
+        WebAccessdCallback ourCallback = new CoinifyRateCallback(this, callback);
+
+        WebAccessor.getAsynch("https://api.coinify.com/v3/rates", ourCallback);
+    }
+
     void updateLastGoogleRate(double newrate) {
 
         lastGoogleRate = newrate;
+
+        sendOverallCallbackUpdate();
+    }
+
+    void updateLastBlockchainInfoRate(double newrate) {
+
+        lastBlockchainInfoRate = newrate;
 
         sendOverallCallbackUpdate();
     }
@@ -74,9 +92,9 @@ public class BackendController {
         sendOverallCallbackUpdate();
     }
 
-    void updateLastBlockchainInfoRate(double newrate) {
+    void updateLastCoinifyRate(double newrate) {
 
-        lastBlockchainInfoRate = newrate;
+        lastCoinifyRate = newrate;
 
         sendOverallCallbackUpdate();
     }
@@ -104,13 +122,18 @@ public class BackendController {
             rollingAmount++;
         }
 
+        if (lastBlockchainInfoRate != null) {
+            rollingRate += lastBlockchainInfoRate;
+            rollingAmount++;
+        }
+
         if (lastCoindeskRate != null) {
             rollingRate += lastCoindeskRate;
             rollingAmount++;
         }
 
-        if (lastBlockchainInfoRate != null) {
-            rollingRate += lastBlockchainInfoRate;
+        if (lastCoinifyRate != null) {
+            rollingRate += lastCoinifyRate;
             rollingAmount++;
         }
 
@@ -128,6 +151,13 @@ public class BackendController {
         return lastGoogleRate;
     }
 
+    public Double getLastBlockchainInfoRate() {
+        if (lastBlockchainInfoRate == null) {
+            return 0.0;
+        }
+        return lastBlockchainInfoRate;
+    }
+
     public Double getLastCoindeskRate() {
         if (lastCoindeskRate == null) {
             return 0.0;
@@ -135,11 +165,11 @@ public class BackendController {
         return lastCoindeskRate;
     }
 
-    public Double getLastBlockchainInfoRate() {
-        if (lastBlockchainInfoRate == null) {
+    public Double getLastCoinifyRate() {
+        if (lastCoinifyRate == null) {
             return 0.0;
         }
-        return lastBlockchainInfoRate;
+        return lastCoinifyRate;
     }
 
 }
