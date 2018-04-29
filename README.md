@@ -28,7 +28,7 @@ In Android Studio, you can build this in two different ways:
 2. Release build (click on Build > Generate Signed APK...), which will be saved to
 ```BitcoinAlert/app/release/app-release.apk```
 
-Either way, after you are done building the APK fine, you can either load it in an emulator (which I never got to work because my computer is real slow and old), or load it onto your Android smartphonedevicething. (To do so, just connect your phone via USB to the computer, copy the file over to a folder inside the phone, open the file on your phone with any file browser app, and then click yes to install it. When juggling different versions - e.g. ones downloaded from the Play Store and ones manually installed - you might have to manually uninstall the previous version of the app first via Settings > Apps on the phonedevicething.)
+Either way, after you are done building the APK file, you can either load it in an emulator (which I never got to work because my computer is real slow and old), or load it onto your Android smartphonedevicething. (To do so, just connect your phone via USB to the computer, copy the file over to a folder inside the phone, open the file on your phone with any file browser app, and then click yes to install it. When juggling different versions - e.g. ones downloaded from the Play Store and ones manually installed - you might have to manually uninstall the previous version of the app first via Settings > Apps on the phonedevicething.)
 
 ## License
 
